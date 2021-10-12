@@ -1,9 +1,9 @@
-import { Hand } from '../components'
+import { Deck } from '../components'
 import styled from "styled-components";
 function App() {
   return (
     <Content className="App">
-      <Hand/>
+      <Deck/>
     </Content>
   );
 }
