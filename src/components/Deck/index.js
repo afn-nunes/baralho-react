@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Card, Hand } from '../../components'
+import React from 'react'
+import { Card} from '../../components'
 import styled from "styled-components";
 import ico from '../../assets/icones/ico.png'
 
@@ -21,17 +21,29 @@ export function Deck() {
     < DivDeck>
       <Divheader>
         <h1>DECK</h1>
-        <StyledIco src={ico} alt="Icone" />
-
+        <StyledIco src={ico} alt="Icone" />                
       </Divheader>
-      <Hand deck={deck} />
+      <DivCard>
+        {
+          deck.filter((c) => c.code[0] !== "0" & c.code[0] !== "8" & c.code[0] !== "9")
+            .map((img, key) => (
+              <Card source={img.image} id={key}/>
+            ))
+        }
+      </DivCard>
     </DivDeck >
   )
 }
 
 export default Deck;
 
-
+const DivCard = styled.div`
+  display: flex;  
+  flex-direction: row;  
+  align-items: center;    
+  width: 60vw;
+  flex-wrap: wrap;
+`;
 const DivDeck = styled.div`
   display: flex;  
   flex-direction: column;  

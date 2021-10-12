@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Card } from '../../components'
+import React from 'react';
 import styled from "styled-components";
-// const players = [
-//     {nome: "Andre",listaDeCartas: []},
-//     {nome: "Dario",listaDeCartas: []},
-//     {nome: "Wallace",listaDeCartas: []},
-//     {nome: "Pinheiro",listaDeCartas: []}
-// ]
-
-
+import {Card} from '../../components'
 export function Hand(props) {
     const { deck } = props
     const jogadores = [{ nome: "André", mao: {} },
@@ -16,8 +8,6 @@ export function Hand(props) {
     { nome: "Wallace", mao: {} },
     { nome: "Gaspar", mao: {} }
     ]
-
-
 
     let inicio = 0;
     let final = 10;
@@ -28,7 +18,7 @@ export function Hand(props) {
     })
 
     return (
-        <>
+        <DivDeck>
             {
                 jogadores.map((jogador, key) => (
                     <DivJogador className="divJogador">
@@ -37,9 +27,7 @@ export function Hand(props) {
                         </div>
                         <DivCard className="divCarta">
                             {jogador.mao.map((carta) => (
-
-                                <StyledImg src={carta.image} alt={carta.code} />
-
+                                <Card source={carta.image} id={key}/>
                             ))}
                         </DivCard>
                     </DivJogador>
@@ -47,16 +35,20 @@ export function Hand(props) {
 
                 ))
             }
-        </>
+        </DivDeck>
     );
 }
 
+const DivDeck = styled.div`
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;    
+`;
 const DivJogador = styled.div`
   display: flex;  
   flex-direction: column;  
   align-items: center;    
-  width: 70vw;
-  flex-wrap: wrap;
+  width: 70vw;  
 `;
 
 const DivCard = styled.div`
