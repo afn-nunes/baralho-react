@@ -1,54 +1,37 @@
-import React from 'react'
-import { Card, Hand} from '../../components'
+import React, { useState } from 'react'
+import { Card, Hand } from '../../components'
 import styled from "styled-components";
 import ico from '../../assets/icones/ico.png'
-const context = require.context('../../images', true, /.png$/);
-const cache = {};
 
+const ranks = ['A', '0', '2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K']
+const suits = ['H', 'S', 'D', 'C']
 
-function importAll(r) {
-  r.keys().forEach((key) => (cache[key] = r(key)));
-}
-importAll(context);
+let deck = []
 
-const cards =
-  Object.entries(cache).map(module => ({
-    img: module[1].default,
-    nome: module[0].replace('.png', '').replace('./', '')
+suits.forEach(suit => ranks.forEach(rank => deck.push(
+  {
+    code: rank + suit,
+    image: 'http://deckofcardsapi.com/static/img/' + rank + suit + '.png'
   }
-  ));
+)))
 
 export function Deck() {
 
-  return (    
+  return (
     < DivDeck>
-      {/* <Hand deck={cards}/> */}
       <Divheader>
         <h1>DECK</h1>
         <StyledIco src={ico} alt="Icone" />
+
       </Divheader>
-      <DivCard>
-        {
-          cards.filter((c) => c.nome[0] !== "0" & c.nome[0] !== "8" & c.nome[0] !== "9")
-          .sort(() => (Math.random() > .5) ? 1 : -1)
-          .map((image, key) => (
-            <Card source={image.img} id={key} rank={image.nome[0]} suit={image.nome[1]} />
-          ))
-        }
-      </DivCard>
+      <Hand deck={deck} />
     </DivDeck >
   )
 }
 
 export default Deck;
 
-const DivCard = styled.div`
-  display: flex;  
-  flex-direction: row;  
-  align-items: center;    
-  width: 70vw;
-  flex-wrap: wrap;
-`;
+
 const DivDeck = styled.div`
   display: flex;  
   flex-direction: column;  

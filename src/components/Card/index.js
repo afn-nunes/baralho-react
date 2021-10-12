@@ -15,11 +15,11 @@ const CardImg = styled.img`
   max-height: 9vw;
 `
 
-Card.propTypes = {
-  source: string,
-   id: string, 
-   rank: string, 
-   suit: string, 
-   point: number
-}
+// Card.propTypes = {
+//   source: string,
+//    id: string, 
+//    rank: string, 
+//    suit: string, 
+//    point: number
+// }
 
