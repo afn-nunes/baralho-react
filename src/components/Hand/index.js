@@ -2,20 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Card} from '../../components'
 export function Hand(props) {
-    const { deck } = props
-    const jogadores = [{ nome: "André", mao: {} },
-    { nome: "Dario", mao: {} },
-    { nome: "Wallace", mao: {} },
-    { nome: "Gaspar", mao: {} }
-    ]
-
-    let inicio = 0;
-    let final = 10;
-    jogadores.forEach(jogador => {
-        jogador.mao = deck.slice(inicio, final);
-        inicio = inicio + 10;
-        final = final + 10;
-    })
+    const { jogadores } = props
 
     return (
         <DivDeck>
@@ -31,8 +18,6 @@ export function Hand(props) {
                             ))}
                         </DivCard>
                     </DivJogador>
-
-
                 ))
             }
         </DivDeck>
@@ -57,10 +42,3 @@ const DivCard = styled.div`
   align-items: center;   
   flex-direction: row     
 `;
-
-const StyledImg = styled.img`
-  width: 10vh;  
-`
-
-
-
