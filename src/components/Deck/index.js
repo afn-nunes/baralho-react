@@ -22,13 +22,19 @@ export function Deck() {
 
   return (    
     < DivDeck>
-      
+      {/* <Hand deck={cards}/> */}
       <Divheader>
         <h1>DECK</h1>
         <StyledIco src={ico} alt="Icone" />
       </Divheader>
       <DivCard>
-      <Hand deck={cards}/>
+        {
+          cards.filter((c) => c.nome[0] !== "0" & c.nome[0] !== "8" & c.nome[0] !== "9")
+          .sort(() => (Math.random() > .5) ? 1 : -1)
+          .map((image, key) => (
+            <Card source={image.img} id={key} rank={image.nome[0]} suit={image.nome[1]} />
+          ))
+        }
       </DivCard>
     </DivDeck >
   )
