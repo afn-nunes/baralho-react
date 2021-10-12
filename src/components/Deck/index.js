@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Card, Hand} from '../../components'
 import styled from "styled-components";
 import ico from '../../assets/icones/ico.png'
@@ -19,21 +19,16 @@ const cards =
   ));
 
 export function Deck() {
-  const [deck, setDeck] = useState([]);
+
   return (    
-    < DivDeck>    
+    < DivDeck>
+      
       <Divheader>
         <h1>DECK</h1>
         <StyledIco src={ico} alt="Icone" />
       </Divheader>
       <DivCard>
-        {
-          cards.filter((c) => c.nome[0] !== "0" & c.nome[0] !== "8" & c.nome[0] !== "9")
-          .sort(() => (Math.random() > .5) ? 1 : -1).
-          map((image, key) => (
-            <Card source={image.img} id={key} rank={image.nome[0]} suit={image.nome[1]} />
-          ))
-        }
+      <Hand deck={cards}/>
       </DivCard>
     </DivDeck >
   )

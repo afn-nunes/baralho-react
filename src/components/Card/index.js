@@ -1,12 +1,12 @@
 
 import styled from "styled-components";
-import {string, number } from 'prop-types';
 
 // const rank = ['A','0','1','2','3','4','5','6','7','8','9','J','Q','K']
 // const suit = ['H', 'S', 'D', 'C']
-export function Card({source, id, rank, suit, point}) {    
+export function Card(props) {   
+  const{source}   = props
     return (
-        <CardImg src={source} key={'card' + id} />
+        console.log(source)
     )
 }
 
@@ -15,11 +15,11 @@ const CardImg = styled.img`
   max-height: 9vw;
 `
 
-Card.propTypes = {
-  source: string,
-   id: string, 
-   rank: string, 
-   suit: string, 
-   point: number
-}
+// Card.propTypes = {
+//   source: string,
+//    id: string, 
+//    rank: string, 
+//    suit: string, 
+//    point: number
+// }
 
