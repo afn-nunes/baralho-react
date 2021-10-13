@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route  
 } from "react-router-dom";
 
 const jogadores = [{ nome: "André", mao: {} },
@@ -54,7 +53,7 @@ export default function AppHome() {
         <Switch>
           <Route path='/partida'><Partida jogadores={jogadores}/></Route>
           <Route path="/users"><Hand jogadores={jogadores} /></Route>
-          <Route path="/"><Deck deck={deckAux}/></Route>          
+          <Route path="/"><Deck deck={deckAux}/></Route>
         </Switch>
       </div>
     </Router>
