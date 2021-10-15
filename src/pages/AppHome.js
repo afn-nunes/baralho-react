@@ -1,11 +1,11 @@
 import React from "react";
-import { Deck, Hand, Partida } from '../components'
+import { Deck, Hand, Match } from '../components'
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route  
+  Route
 } from "react-router-dom";
 
 const jogadores = [{ nome: "André", mao: {} },
@@ -51,7 +51,7 @@ export default function AppHome() {
         </Navbar>
 
         <Switch>
-          <Route path='/partida'><Partida jogadores={jogadores}/></Route>
+          <Route path='/partida'><Match jogadores={jogadores}/></Route>
           <Route path="/users"><Hand jogadores={jogadores} /></Route>
           <Route path="/"><Deck deck={deckAux}/></Route>
         </Switch>

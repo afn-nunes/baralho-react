@@ -41,13 +41,13 @@ const DivCard = styled.div`
   display: flex;  
   flex-direction: row;  
   align-items: center;    
-  width: 60vw;
+  width: 45vw;
   flex-wrap: wrap;
 `;
 const DivDeck = styled.div`
   display: flex;  
   flex-direction: column;  
-  align-items: center;    
+  align-items: center;      
 `;
 
 const StyledIco = styled.img`

@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import {string} from 'prop-types';
+import {string, number} from 'prop-types';
 
 export function Card({source, id}) {
     return (
@@ -10,11 +10,11 @@ export function Card({source, id}) {
 
 const CardImg = styled.img`
   padding: 2px;  
-  max-height: 8vw;
+ height: 6vw;
 `
 
 Card.propTypes = {
-  source: string,
-   id: string, 
+   source: string,
+   id: number, 
 }
 

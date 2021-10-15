@@ -33,7 +33,7 @@ const DivJogador = styled.div`
   display: flex;  
   flex-direction: column;  
   align-items: center;    
-  width: 70vw;  
+  width: 70vw;    
 `;
 
 const DivCard = styled.div`
