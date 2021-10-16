@@ -53,7 +53,7 @@ const StyledCarousel = styled(Carousel)`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 28vh;
+    height: 37vh;
 `
 
 const DivScore = styled.div`
@@ -61,7 +61,7 @@ const DivScore = styled.div`
   justify-content: space-around;  
   flex-direction: row;
   width: 100vw;
-  padding: 5vh;
+  padding: 2vh;
 `;
 const DivMatch = styled.div`
     display: flex;
